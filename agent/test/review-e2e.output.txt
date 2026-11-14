@@ -1,0 +1,16 @@
+PASS  (2) lastTappedElementId and hub-seeded elementIds are never the selection  ([[],[],["b"]])
+PASS  (4) JSX syntax error: failed, and no file in the real src was written at all (mtimes unchanged)  (Sorry, I couldn't make that change safely.; fast#1 0 ms; fast: discarded before it reached the app (TypeScript: src/screens/Transfer.tsx: error TS17002: Expected corresponding JSX closing tag for 'buton'.)
+PASS  (4) type error: failed, real src untouched  (fast#1 0 ms; fast: discarded before it reached the app (TypeScript: src/screens/Transfer.tsx: error TS2561: Object literal may only specify known properties, bu)
+PASS  (4) broken CSS: failed, real src untouched  (fast#1 0 ms; fast: discarded before it reached the app (unbalanced braces in src/styles.css), verify 3 ms; fast#2 0 ms; fast: discarded before it reached the ap)
+PASS  (1c) the fast path refuses an edit that names elements.json  (fast#1 0 ms: unusable (the edit names a file that does not exist or may not be edited: src/pineo/elements.json); fast#2 0 ms: unusable (the edit names a file that does not exist or may not be edited: )
+PASS  a good edit is committed to the real src after the checks  (["src/screens/Transfer.tsx"])
+PASS  summaries are cut to 70 characters for the phone  (68: Send button has a title now, which is a very long summary that goes…)
+PASS  an error that was already in the app does not block a good edit  (fast#1 0 ms; fast: ok, verify 310 ms)
+PASS  …but a new error from the edit itself is still caught  (fast#1 0 ms; fast: discarded before it reached the app (TypeScript: src/screens/Transfer.tsx: error TS17002: Expected co)
+PASS  (3)(10) 'undo' and 'put everything back' in a NEW session leave the earlier session's change alone  (There is nothing from this session to undo. | There is nothing from this session to undo.)
+PASS  (3) 'undo' in the same session restores it  (Reverted: Send button has a title now, which is a very long…)
+PASS  (3) reset-app.sh clear-history removes the history files  (runner memory cleared (2 history file(s) removed); a running hub runner picks this up at its next ticket)
+PASS  (5) connection refused: failed in under 3 s with a human message, no retries, no session  (22 ms: The model is not answering, try again in a moment.)
+PASS  (5) a model that accepts and never answers: failed after the 15 s limit, not minutes  (15031 ms: The model is not answering, try again in a moment.)
+
+REVIEW ITEMS OK

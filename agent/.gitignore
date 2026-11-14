@@ -1,0 +1,6 @@
+# Private Claude Code config dir of the agent child process (created at run time).
+.claude-home/
+# Baseline archives made by reset-app.sh snapshot.
+baseline/
+# The hub runner's memory of recent changes (file contents before/after).
+.state/

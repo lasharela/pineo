@@ -1,0 +1,19 @@
+{
+  "_comment": "Wrist-rotation detector. CALIBRATED on gesture/recordings/20261114-130023 (owner's wrist, band on gx, 100 Hz). Units: degrees/second and milliseconds. See pineo_band/gesture.py.",
+  "axis": "gx",
+  "direction": "positive",
+  "smooth_ms": 0,
+  "threshold_dps": 350,
+  "release_dps": 150,
+  "min_peak_ms": 60,
+  "max_peak_ms": 350,
+  "return_gap_ms": 350,
+  "require_return": true,
+  "purity": 0.5,
+  "max_gap_ms": 900,
+  "decision_delay_ms": 400,
+  "refractory_ms": 800,
+  "double_while_open": "submit",
+  "single_min_peak_dps": 700,
+  "double_min_peak_dps": 500
+}

@@ -1,0 +1,11 @@
+[
+  {"id": "home-balance", "screen": "home", "label": "Account balance", "description": "Current balance of the main account", "howTo": "Open Home", "keywords": ["balance", "money", "total"]},
+  {"id": "home-transfer-button", "screen": "home", "label": "Send money", "description": "Starts a transfer", "howTo": "Open Home, tap Send money", "keywords": ["transfer", "pay", "send"]},
+  {"id": "transfer-amount-input", "screen": "transfer", "label": "Amount", "description": "How much to send", "howTo": "Open Send money, type the amount", "keywords": ["amount", "sum"]},
+  {"id": "transfer-submit", "screen": "transfer", "label": "Submit transfer", "description": "Sends the transfer", "howTo": "Open Send money, fill it in, tap Submit", "keywords": ["submit", "confirm", "send"]},
+  {"id": "cards-list", "screen": "cards", "label": "Your cards", "description": "All cards on the account", "howTo": "Open Cards", "keywords": ["cards", "debit", "credit"]},
+  {"id": "card-block-toggle", "screen": "cards", "label": "Block card", "description": "Switch that freezes the selected card", "howTo": "Open Cards, pick a card, toggle Block card", "keywords": ["freeze", "lock", "block"]},
+  {"id": "card-limit-slider", "screen": "cards", "label": "Spending limit", "description": "Daily spending limit of the card", "howTo": "Open Cards, pick a card, drag Spending limit", "keywords": ["limit", "spending"]},
+  {"id": "settings-notifications", "screen": "settings", "label": "Notifications", "description": "Push notification switches", "howTo": "Open Settings, Notifications", "keywords": ["alerts", "push"]},
+  {"id": "settings-logout", "screen": "settings", "label": "Log out", "description": "Signs out of the app", "howTo": "Open Settings, scroll down, Log out", "keywords": ["sign out", "logout", "exit"]}
+]

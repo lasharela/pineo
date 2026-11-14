@@ -1,0 +1,14 @@
+/* Styles for the Activity screen only. Shared pieces (rows, buttons, fields, colours as --variables) are in ../styles.css. */
+.segmented { display: grid; grid-template-columns: 1.2fr 1fr 1fr; background: var(--lilac); border-radius: 14px; padding: 4px; }
+.segmented button { min-height: 40px; border-radius: 11px; font-size: 14px; font-weight: 600; color: var(--muted); text-align: center; }
+.segmented button.on { background: var(--surface); color: var(--ink); box-shadow: 0 1px 4px rgba(27, 21, 48, 0.12); }
+.inout { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.inout div { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.inout b { font-size: 19px; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.day { font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin: 20px 4px 8px; }
+.tx { border-bottom: 1px solid var(--line); }
+.tx:last-child { border-bottom: 0; }
+.tx .row { border-bottom: 0; }
+.tx-detail { padding: 2px 16px 12px 66px; font-size: 13px; color: var(--muted); display: grid; gap: 4px; }
+.tx-detail div { display: flex; justify-content: space-between; }
+.empty { text-align: center; color: var(--muted); padding: 40px 20px; }

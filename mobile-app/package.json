@@ -1,0 +1,26 @@
+{
+  "name": "pineo-mobile-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "kb:check": "node scripts/kb-check.mjs",
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/kb-check.mjs && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "e2e": "node scripts/e2e.mjs"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "ws": "^8.18.0"
+  }
+}

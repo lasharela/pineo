@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Pineo: live tickets</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffffff'/%3E%3Cpath d='M16 5l7 10h-4l5 8H8l5-8H9z' fill='%230b8457'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path d="M16 3l8 11h-4.5l6 9H6.500l6-9H8z" fill="currentColor"/><rect x="14.500" y="23" width="3" height="6" rx="1" fill="currentColor"/></svg>
+    <span>Pineo</span>
+  </div>
+  <div class="pills">
+    <div class="pill warn" id="pill-hub" hidden><i class="dot"></i><span>Reconnecting to hub…</span></div>
+    <div class="band-wrap">
+      <div class="band-row">
+        <div class="pill" id="pill-band" hidden><span id="band-text">mic off</span>
+          <span class="battery" id="band-battery" hidden><b><u id="band-battery-fill"></u></b><span id="band-battery-text"></span></span>
+        </div>
+        <button id="band-toggle" type="button" class="hbtn" data-link="none" disabled><i class="dot"></i><span id="band-toggle-label">Band process not running</span></button>
+      </div>
+      <div class="band-hint" id="band-hint" role="status"></div>
+    </div>
+    <div class="pill" id="pill-phone"><i class="dot"></i><span id="phone-text">Phone offline</span></div>
+  </div>
+</header>
+
+<section class="live" id="live">
+  <div class="live-state">
+    <div class="state-line"><i class="rec-dot"></i><span id="state-label">No session</span><span class="timer" id="state-timer"></span></div>
+    <div class="state-sub" id="state-sub">Rotate twice to start: the mic turns on with the session.</div>
+    <div class="gesture-chip show" id="gesture-chip">No gesture yet</div>
+  </div>
+  <div class="live-transcript" id="live-transcript" aria-live="polite"><p id="live-text"></p></div>
+</section>
+
+<main class="cols">
+  <section class="panel list-panel">
+    <h2>Tickets <span class="count" id="bug-count"></span></h2>
+    <div class="scroll" id="bug-list"></div>
+  </section>
+
+  <section class="panel detail-panel">
+    <div class="detail-empty" id="detail-empty">Select a ticket to see what was said and pointed at.</div>
+    <div class="detail" id="detail" hidden>
+      <div class="detail-text scroll" id="detail-text"></div>
+      <div class="detail-replay">
+        <div class="phone" id="phone">
+          <div class="phone-screen" id="phone-screen"></div>
+          <div class="phone-note" id="replay-note"></div>
+        </div>
+        <div class="controls">
+          <span id="ctl-info"></span>
+          <button id="ctl-replay" type="button" hidden>Replay</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel assist-panel">
+    <h2>Assist <span class="count" id="assist-count"></span></h2>
+    <div class="scroll" id="assist-list"></div>
+  </section>
+</main>
+
+<aside class="debug" id="debug" hidden>
+  <header><b>Debug: drive Pineo without the band</b><span>press <kbd>D</kbd> to hide</span></header>
+  <div class="row">
+    <button data-gesture="double" type="button" class="strong">Double</button>
+    <button data-gesture="single" type="button" class="strong">Single</button>
+    <button data-gesture="next" type="button">Next</button>
+    <button data-gesture="open" type="button">Open</button>
+    <button data-gesture="submit" type="button">Submit</button>
+    <button data-gesture="cancel" type="button">Cancel</button>
+    <button id="dbg-tap" type="button">Tap</button>
+    <button id="dbg-circle" type="button">Circle</button>
+  </div>
+  <div class="row">
+    <input id="dbg-text" type="text" placeholder="Transcript line…" autocomplete="off">
+    <button id="dbg-interim" type="button">Interim</button>
+    <button id="dbg-final" type="button">Final</button>
+  </div>
+  <div class="row">
+    <input id="dbg-element" type="text" list="dbg-elements" placeholder="element id (empty: no match)" autocomplete="off">
+    <datalist id="dbg-elements"></datalist>
+    <input id="dbg-say" type="text" placeholder="What to say…" autocomplete="off">
+    <button id="dbg-assist" type="button">Assist</button>
+  </div>
+  <div class="row">
+    <button id="dbg-demo" type="button" class="strong">Run scripted ticket</button>
+    <button id="dbg-enrich" type="button">Write up</button>
+    <button id="dbg-fix" type="button">Simulate fix</button>
+    <button id="dbg-band" type="button">Toggle band</button>
+    <button id="dbg-reset" type="button" class="danger">Reset all</button>
+  </div>
+  <div class="dbg-status" id="dbg-status">Ready.</div>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>

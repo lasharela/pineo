@@ -1,0 +1,24 @@
+vexo-open-kit/
+.env
+.venv/
+.fix-ui/
+.pineo-run/
+
+# dependencies, builds, caches
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.tsbuildinfo
+.DS_Store
+.code-review-graph/
+.impeccable/
+
+# run-time data: real tickets, phone diagnostics, agent memory, wrist recordings
+hub/data/
+agent/.state/
+agent/.claude-home/
+agent/baseline/
+gesture/recordings/
+video/

@@ -1,0 +1,49 @@
+PASS  real hub is up on a spare port  (:29407)
+PASS  Vite dev server serves the scratch app  (:29408)
+PASS  agent connected to the real hub as role=agent
+
+1. submit -> done 3005 ms; fix {"state":"done","summary":"Submit button now says Send money","files":["src/screens/Transfer.tsx"],"ms":1635,"startedAt":1794695080454}; phone saw working@1363ms, done@2997ms
+PASS  1 text change: the hub stored fix.state done
+PASS  1 the phone was told working, then done
+PASS  1 Vite now serves Transfer.tsx with the new text (what hot reload delivers)
+
+2. submit -> done 4235 ms; fix {"state":"done","summary":"Send money button is now teal","files":["src/screens/Transfer.tsx"],"ms":2810,"startedAt":1794695083964}; phone saw working@1352ms, done@4163ms
+PASS  2 colour change: done
+
+3. submit -> done 4227 ms; fix {"state":"done","summary":"Balance card is now blue","files":["src/screens/Home.css"],"ms":2823,"startedAt":1794695088610}; phone saw working@1355ms, done@4178ms
+PASS  3 circled card blue: done
+PASS  Vite reports no transform error for the edited files
+PASS  Vite's own log has no error
+
+LATENCY (submit gesture -> fix done stored by the hub, real MiniMax, real hub):
+  text change    3005 ms
+  colour change  4235 ms
+  card blue      4227 ms
+
+--- agent log ---
+[pineo-hub-agent 22:24:38.063] history: 0 earlier change(s) remembered in <tmp>/st-real-hub/history-90ab8e89c2.json
+[pineo-hub-agent 22:24:38.064] edits are checked in <tmp>/st-real-hub/overlay-90ab8e89c2 before they are written to the app
+[pineo-hub-agent 22:24:38.064] app <tmp>/app; model MiniMax-M3.1-Flash (effort low); fast path on, full session on
+[pineo-hub-agent 22:24:38.081] hub not reachable at ws://127.0.0.1:29407/ws?role=agent; retrying until it is
+[pineo-hub-agent 22:24:38.587] connected to the hub at ws://127.0.0.1:29407/ws?role=agent
+[pineo-hub-agent 22:24:40.454] ticket bug_1a1dc29a3ad779f2a: working
+[pineo-hub-agent 22:24:40.465]   request "change the text on this button to Send money"; selected [transfer-submit]; files [src/screens/Transfer.tsx, src/styles.css, src/ui.tsx]; history 0 (located in 1 ms)
+[pineo-hub-agent 22:24:42.088] ticket bug_1a1dc29a3ad779f2a: ✓ done in 1635 ms via fast — Submit button now says Send money [src/screens/Transfer.tsx] {fast#1 1445 ms; fast: ok, verify 175 ms}
+[pineo-hub-agent 22:24:43.964] ticket bug_1a1dc29b1747589c7: working
+[pineo-hub-agent 22:24:43.969]   request "change the color of this button"; selected [transfer-submit, transfer-cancel]; files [src/screens/Transfer.tsx, src/styles.css, src/ui.tsx]; history 1 (located in 1 ms)
+[pineo-hub-agent 22:24:46.774] ticket bug_1a1dc29b1747589c7: ✓ done in 2810 ms via fast — Send money button is now teal [src/screens/Transfer.tsx] {fast#1 2634 ms; fast: ok, verify 168 ms}
+[pineo-hub-agent 22:24:48.610] ticket bug_1a1dc29c399541565: working
+[pineo-hub-agent 22:24:48.621]   request "make this card blue"; selected [home-balance]; files [src/screens/Home.tsx, src/screens/Home.css, src/styles.css, src/ui.tsx, src/screens/Activity.tsx]; history 2 (located in 1 ms)
+[pineo-hub-agent 22:24:51.433] ticket bug_1a1dc29c399541565: ✓ done in 2823 ms via fast — Balance card is now blue [src/screens/Home.css] {fast#1 2648 ms; fast: ok, verify 161 ms}
+
+--- vite log ---
+2:24:38 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+
+  VITE v8.3.8  ready in 151 ms
+
+  ➜  Local:   http://127.0.0.1:29408/
+2:24:42 PM [vite] (client) hmr update /src/screens/Transfer.tsx
+2:24:46 PM [vite] (client) hmr update /src/screens/Transfer.tsx
+
+REAL HUB CHAIN OK
+exit=0

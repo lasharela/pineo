@@ -1,0 +1,48 @@
+/* Styles for the Home screen only. Shared pieces (rows, buttons, fields, colours as --variables) are in ../styles.css. */
+/* Total balance card — light card, dark text. Change --balance-bg to recolour it. */
+.balance {
+  --balance-bg: linear-gradient(135deg, #efe9ff 0%, #ffffff 55%, #fff1e8 100%);
+  --balance-text: #15131f;
+  background: var(--balance-bg);
+  color: var(--balance-text);
+  border: 1px solid #ddd6f5;
+  border-radius: 26px; padding: 18px 20px 20px; position: relative; overflow: hidden;
+  box-shadow: 0 10px 28px rgba(75, 45, 143, 0.1);
+}
+.balance-top { display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #5d5a6b; position: relative; z-index: 1; }
+.ghost-icon { width: 44px; height: 44px; margin: -8px -10px -8px 0; display: grid; place-items: center; color: #4b2d8f; }
+.balance-figure { display: block; font-size: 38px; font-weight: 750; letter-spacing: -0.03em; margin: 2px 0 6px; }
+.balance-delta { font-size: 13px; font-weight: 600; background: #e3f6ec; color: #0b6b43; padding: 4px 10px; border-radius: 999px; }
+
+.quick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 16px; }
+.quick-3 { grid-template-columns: repeat(3, 1fr); }
+.quick button { display: flex; flex-direction: column; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; padding: 4px 0; min-height: 76px; }
+.quick button span { width: 52px; height: 52px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); display: grid; place-items: center; color: var(--plum-2); }
+:root[data-theme="dark"] .quick button span { color: #c9b8ff; }
+.pin-digits { letter-spacing: 0.3em; font-size: 15px; color: var(--tangerine); }
+
+.acct-dot { width: 38px; height: 38px; border-radius: 12px; flex: none; }
+.tone-plum { background: linear-gradient(135deg, var(--plum), #6a3fc2); }
+.tone-teal { background: linear-gradient(135deg, #0b7f70, #35c9a9); }
+.tone-tangerine { background: linear-gradient(135deg, #f25f2a, #ffb057); }
+.tone-ink { background: linear-gradient(135deg, #17141f, #4a4560); }
+
+.goal { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; position: relative; }
+.goal-text { display: flex; flex-direction: column; gap: 4px; }
+.goal-text b { font-size: 16px; }
+.goal-text small { font-size: 14px; line-height: 1.35; }
+/* DEMO BUG 2 lives here: absolute button, no space reserved for it */
+.goal-add { position: absolute; right: 12px; top: 26px; box-shadow: 0 4px 12px rgba(42, 23, 80, 0.3); }
+.progress { height: 8px; border-radius: 4px; background: var(--lilac); margin-top: 14px; overflow: hidden; }
+.progress i { display: block; height: 100%; border-radius: 4px; background: var(--tangerine); }
+
+.spend-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px; }
+.spend-head strong { font-size: 24px; letter-spacing: -0.02em; }
+.spend-row { display: grid; grid-template-columns: 108px 1fr 78px; align-items: center; gap: 10px; font-size: 14px; padding: 6px 0; }
+.spend-row .num { text-align: right; font-weight: 600; }
+.bar { height: 8px; border-radius: 4px; background: var(--lilac); overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: 4px; }
+
+.invite { display: flex; align-items: center; gap: 12px; margin-top: 22px; padding: 14px; border-radius: var(--radius); background: var(--lilac); min-height: 72px; color: var(--ink); }
+.invite div { flex: 1; display: flex; flex-direction: column; }
+.invite b { font-size: 15px; }

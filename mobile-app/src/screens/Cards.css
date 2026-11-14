@@ -1,0 +1,25 @@
+/* Styles for the Cards screen only. Shared pieces (rows, buttons, fields, colours as --variables) are in ../styles.css. */
+.card-rail { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -18px; padding: 4px 18px 10px; scrollbar-width: none; }
+.card-rail::-webkit-scrollbar, .chips-rail::-webkit-scrollbar { display: none; }
+.paycard {
+  flex: 0 0 86%; scroll-snap-align: center; aspect-ratio: 1.586; border-radius: 22px; color: #fff; padding: 18px 20px;
+  display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden;
+  box-shadow: 0 14px 26px rgba(27, 21, 48, 0.22); transition: filter 0.25s;
+}
+.paycard::after { content: ""; position: absolute; right: -40px; bottom: -70px; width: 200px; height: 200px; border-radius: 50%; background: rgba(255, 255, 255, 0.12); }
+.paycard.frozen { filter: grayscale(0.9) brightness(0.85); }
+.paycard-top { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 15px; }
+.paycard-number { font-size: 19px; letter-spacing: 0.06em; font-variant-numeric: tabular-nums; white-space: pre; }
+.paycard-bottom { display: flex; justify-content: space-between; font-size: 13px; letter-spacing: 0.08em; opacity: 0.9; position: relative; z-index: 1; }
+.frozen-tag { position: absolute; top: 16px; right: 16px; display: flex; align-items: center; gap: 5px; background: rgba(255, 255, 255, 0.92); color: #1b1530; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; z-index: 1; }
+.dots { display: flex; justify-content: center; gap: 6px; margin: 2px 0 4px; }
+.dots i { width: 7px; height: 7px; border-radius: 50%; background: #cfc8da; transition: all 0.2s; }
+.dots i.on { width: 20px; background: var(--plum-2); }
+
+.card-green-toggle .toggle.on { background: var(--green); }
+
+.limit { display: block; padding: 4px 0 14px; }
+.limit + .limit { border-top: 1px solid var(--line); padding-top: 16px; padding-bottom: 2px; }
+.limit div { display: flex; justify-content: space-between; align-items: baseline; }
+.limit .num { font-weight: 700; font-size: 17px; }
+.limit input[type="range"] { width: 100%; margin: 12px 0 6px; accent-color: var(--plum-2); height: 28px; }
